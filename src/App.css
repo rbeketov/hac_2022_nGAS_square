@@ -1,0 +1,168 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.add-button {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  border: 0px;
+  color: aliceblue;
+  background-color: cornflowerblue;
+  left: 67%;
+  top: 85%;
+  text-align: center;
+  font-size: 70px;
+  border-radius: 40px;
+  z-index: 1000;
+}
+
+.note-header {
+  background-color: cornflowerblue;
+  width: 100px;
+  font-size: medium;
+  border-radius: 5px;
+  top: 20px;
+  margin-left: 8px;
+  padding: 2px;
+  position: relative;
+}
+
+.note-text {
+  border-radius: 5px;
+  background-color: aliceblue;
+  padding: 20px 10px 10px;
+  font-family: "Courier New", serif;
+  font-style: oblique;
+}
+
+.note-date {
+  background-color: aliceblue;
+}
+
+.note {
+  width: 30%;
+  float: left;
+
+  margin: 1.66%;
+}
+
+textarea {
+  resize: initial;
+  height: 40px;
+  border: 0px;
+}
+
+
+
+div.left-curtain {
+  width: 25%;
+  background-color: cornflowerblue;
+  height: 100vh;
+  float: left;
+  position: fixed;
+
+}
+div.main-screen {
+  width: 50%;
+  height: 100vh;
+  float: left;
+  margin-left: 25%;
+  position: absolute;
+}
+
+div.right-curtain {
+  width: 25%;
+  height: 100vh;
+  background-color: cornflowerblue;
+  float: left;
+  right: 0px;
+  position: fixed;
+}
+
+.reg-window {
+  margin: 5%;
+  width: 80%;
+  height: 25%;
+  padding: 20px;
+  background-color: aliceblue;
+  border-radius: 20px;
+  border: 0px;
+}
+
+.login-field {
+  width: 80%;
+  border: 0px;
+  margin: 10px;
+}
+
+.password-field {
+  width: 80%;
+  border: 0px;
+  margin: 10px;
+}
+
+.sign-button {
+  border: 0px;
+  background-color: cornflowerblue;
+  color: aliceblue;
+  margin: 10px;
+  border-radius: 20px;
+  padding: 5px;
+}
+.reg-button {
+  border: 0px;
+  background-color: cornflowerblue;
+  color: aliceblue;
+  margin: 10px;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+
+.note-description {
+  color: grey;
+  background-color: aliceblue;
+}
+
+body {
+  background-color: #282c34;
+}
+
+#root {
+  position: relative;
+}
