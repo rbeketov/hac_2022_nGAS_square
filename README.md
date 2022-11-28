@@ -1,1 +1,0 @@
-# hac_2022_nGAS_square
