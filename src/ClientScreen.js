@@ -4,8 +4,8 @@ import ReactDOM from "react-dom/client";
 import {RegOrSign} from "./auth"
 import {getCookie} from "./auth"
 
-const vovaHost = ''
-const urlHost = 'https://3517-195-19-42-150.eu.ngrok.io'
+const vovaHost = 'https://75bc-178-176-77-200.eu.ngrok.io'
+const urlHost = 'https://dde0-195-19-42-150.eu.ngrok.io'
 
 export class Node extends React.Component {
     upClick = () => {
@@ -26,7 +26,7 @@ export class Node extends React.Component {
         this.props.ClientInfo.data[index] = this.props.ClientInfo.data[index - 1]
         this.props.ClientInfo.data[index - 1] = temp
         //this.props.ClientInfo.data.splice(index - 1, 2, this.props.ClientInfo.data[index], this.props.ClientInfo.data[index - 1]);
-        fetch('https://3517-195-19-42-150.eu.ngrok.io/api/user/updatetask', {
+        fetch(urlHost +'/api/user/updatetask', {
             method: 'POST',
             body: JSON.stringify(
                 this.props.ClientInfo
@@ -62,7 +62,7 @@ export class Node extends React.Component {
         this.props.ClientInfo.data[index] = this.props.ClientInfo.data[index + 1]
         this.props.ClientInfo.data[index + 1] = temp
         //this.props.ClientInfo.data.splice(index, 2, this.props.ClientInfo.data[index + 1], this.props.ClientInfo.data[index]);
-        fetch('https://3517-195-19-42-150.eu.ngrok.io/api/user/updatetask', {
+        fetch(urlHost + '/api/user/updatetask', {
             method: 'POST',
             body: JSON.stringify(
                 this.props.ClientInfo
@@ -82,7 +82,7 @@ export class Node extends React.Component {
     deleteClick = () => {
         let index = this.props.Id
         this.props.ClientInfo.data.splice(index, 1);
-        fetch( 'https://3517-195-19-42-150.eu.ngrok.io/api/user/updatetask', {
+        fetch( urlHost + '/api/user/updatetask', {
             method: 'POST',
             body: JSON.stringify(
                 this.props.ClientInfo
@@ -188,16 +188,9 @@ class AddNoteWindow extends React.Component {
 
     dateChange(event) {
         this.setState({dateVal: event.target.value});
-        if (isNaN(Date.parse(this.state.dateVal))) {
-            this.styles = {
-                color: "red"
-            }
-        } else {
-            this.styles = {
-                color: "black"
-            }
 
-        }
+
+
     }
 
     descriptionChange(event) {
@@ -232,7 +225,7 @@ class AddNoteWindow extends React.Component {
         };
         this.props.ClientInfo.data.splice(0, 0, newData)
         event.preventDefault();
-        fetch( 'http://195.19.62.96/new/new_rec/', {
+        fetch( vovaHost + '/new/new_rec/', {
             method: 'POST',
             body: JSON.stringify({
                 sessionId: getCookie("session"),
@@ -254,7 +247,7 @@ class AddNoteWindow extends React.Component {
                 error => alert(error))
             .then(data => {
 
-                fetch('https://3517-195-19-42-150.eu.ngrok.io/api/user/gettask', {
+                fetch( urlHost + '/api/user/gettask', {
                     method: 'POST',
                     body: JSON.stringify({
                         session: getCookie("session")
@@ -403,7 +396,7 @@ export function renderClient(ClientInfo) {
 
 export class DownLoadCal extends React.Component {
     downloadClick = () =>{
-        fetch('http://195.19.62.96/make_calendar/', {
+        fetch(vovaHost + '/make_calendar/', {
             method: 'POST',
             body: JSON.stringify(this.props.ClientInfo)
         })
@@ -422,12 +415,12 @@ export class DownLoadCal extends React.Component {
                 //     .then(data => {
                 //         renderClient(this.ClientInfo)
                 //     })
-                window.location.href = "http://195.19.62.96/MyCalendar/calendar.ics"
+                window.location.href = vovaHost + "/MyCalendar/calendar.ics"
             })
     };
     render(){
         return(
-            <button className="download-button" onClick={this.downloadClick}>создать календарь</button>
+            <button className="download-button" onClick={this.downloadClick}>Cоздать календарь</button>
 
         )
     }

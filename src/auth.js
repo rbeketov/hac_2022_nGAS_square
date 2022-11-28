@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import {renderClient} from "./ClientScreen";
 
-const urlHost = 'https://3517-195-19-42-150.eu.ngrok.io'
+const urlHost = 'https://dde0-195-19-42-150.eu.ngrok.io'
 
 export function getCookie(name) {
     let matches = document.cookie.match(new RegExp(
@@ -58,7 +58,7 @@ export class RegOrSign extends React.Component {
                         .then(data => {
                             if (data.status === "ok"){
                                 document.cookie = "session=" + data.session
-                                fetch(urlHost + '/api/user/...', {
+                                fetch(urlHost + '/api/user/gettask', {
                                     method: 'POST',
                                     body: JSON.stringify({
                                         session: getCookie("session")
@@ -92,7 +92,7 @@ export class RegOrSign extends React.Component {
             .then(data => {
                 if (data.status === "ok"){
                     document.cookie = "session=" + data.session
-                    fetch('https://3517-195-19-42-150.eu.ngrok.io/api/user/gettask', {
+                    fetch( urlHost + '/api/user/gettask', {
                         method: 'POST',
                         body: JSON.stringify({
                             session: getCookie("session")

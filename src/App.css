@@ -153,6 +153,25 @@ div.right-curtain {
   padding: 5px;
 }
 
+.exit-button {
+  border: 0px;
+  background-color: aliceblue;
+  color: cornflowerblue;
+  margin: 10px;
+  border-radius: 20px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+.download-button{
+  border: 0px;
+  background-color: aliceblue;
+  color: cornflowerblue;
+  margin: 10px;
+  border-radius: 20px;
+  padding: 5px;
+  font-size: 20px;
+}
 
 .note-description {
   color: grey;
